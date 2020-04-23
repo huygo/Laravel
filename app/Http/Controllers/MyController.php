@@ -67,4 +67,11 @@ class MyController extends Controller
     public function Time($t){
           return view('myView',['time'=>$t]);
     }
+    public function truyendl($test){
+        if ($test=="Laravel") {
+            return view('pages.test');
+        }elseif ($test=="php") {
+            return view('pages.php');
+        }
+    }
 }

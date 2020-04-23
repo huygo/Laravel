@@ -73,4 +73,10 @@ Route::get('getJson','MyController@getJson' );
 Route::get('goiview','MyController@myView' ); 
 //truyen dl cho view
 Route::get('Time/{t}', 'MyController@Time');
-view()->share('khoahoc', 'abc');
+view()->share('khoahoc', 'abc');//share $khoahoc co gia tri laf abc cho alll view 
+//Blade trong view
+Route::get('blade', function () {
+    return view('pages.test');
+});
+Route::get('Truyendlblade/{test}', 'MyController@truyendl');
+    
