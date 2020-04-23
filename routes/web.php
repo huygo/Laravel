@@ -71,5 +71,6 @@ Route::post('postFile', ['as'=>'postFile','uses'=>'MyController@postFile']);
 Route::get('getJson','MyController@getJson' );
 //gọi view
 Route::get('goiview','MyController@myView' ); 
-Route::get('goiview1','MyController@myView1' );
-
+//truyen dl cho view
+Route::get('Time/{t}', 'MyController@Time');
+view()->share('khoahoc', 'abc');

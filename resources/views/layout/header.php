@@ -1,1 +1,1 @@
-<h1>Đây là header</h1>
+<h1><?php echo $khoahoc; ?></h1>

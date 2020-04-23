@@ -63,4 +63,8 @@ class MyController extends Controller
         //return view('myView');
         return view('layout.header');//goi view trong thu muc layout
     }
+    //truyen dl tren view
+    public function Time($t){
+          return view('myView',['time'=>$t]);
+    }
 }
