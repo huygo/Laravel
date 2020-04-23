@@ -70,4 +70,6 @@ Route::post('postFile', ['as'=>'postFile','uses'=>'MyController@postFile']);
 //Json
 Route::get('getJson','MyController@getJson' );
 //gọi view
-Route::get('goiview','MyController@myView' );
+Route::get('goiview','MyController@myView' ); 
+Route::get('goiview1','MyController@myView1' );
+
