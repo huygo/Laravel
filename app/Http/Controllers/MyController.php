@@ -68,8 +68,9 @@ class MyController extends Controller
           return view('myView',['time'=>$t]);
     }
     public function truyendl($test){
+        $abc='Xin chao cac ban';
         if ($test=="Laravel") {
-            return view('pages.test');
+            return view('pages.test',['chao'=>$abc]);
         }elseif ($test=="php") {
             return view('pages.php');
         }

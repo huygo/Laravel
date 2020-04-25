@@ -63,7 +63,7 @@ Route::post('postForm', ['as'=>'postForm','uses'=>'Mycontroller@postForm']) ;
 Route::get('setcookie',  'Mycontroller@setcookie');
 Route::get('getcookie', 'Mycontroller@getcookie' );
 //upload file
-Route::get('uploadFile', function () {
+Route::get('uploadFile', function () {  
     return view('postFile');
 });
 Route::post('postFile', ['as'=>'postFile','uses'=>'MyController@postFile']);
