@@ -79,4 +79,44 @@ Route::get('blade', function () {
     return view('pages.test');
 });
 Route::get('Truyendlblade/{test}', 'MyController@truyendl');
-    
+//database
+Route::get('database', function () {
+    Schema::create('users', function ($table) {
+        $table->increments('id');
+        
+        $table->string('name',100);
+    });
+    echo "ok";
+});
+//lien ket bang
+Route::get('lienketbang', function () {
+    Schema::create('sanpham', function ($table) {
+        $table->increments('id');
+        $table->string('name');
+        $table->float('gia');
+        $table->integer('soluong')->default(0);
+        $table->integer('id_user')->unsigned();
+        $table->foreign('id_user')->references('id')->on('users');
+    });
+    echo "ok";
+});
+//sua bang
+Route::get('suabang', function () {
+    Schema::table('sanpham', function ($table) {
+        $table->dropColumn('gia'); //xoa cot gia
+    });
+});
+Route::get('themcot', function () {
+    Schema::table('sanpham', function ($table) {
+        $table->float('gia') ; //them cot gia
+    });
+});
+//doi ten bang
+Route::get('doiten', function () {
+    Schema::rename('users', 'loai');
+});
+//xoa bang
+Route::get('xoabang', function () {
+    //Schema::drop('sanpham'); //xoa bang san pham
+    Schema::dropIfExists('sanpham'); //kiem tra neu co bang san pham thi xoa
+});
